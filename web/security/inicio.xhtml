@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h:form>
+            <h1><h:outputText value="Create/Edit"/></h1>
+            <p:panelGrid columns="2">
+                <p:outputLabel value="Docuemnto:" for="docuemnto" />
+                <p:inputText id="docuemnto" value="#{loginManagedBean.usuario.docuemnto}" title="Docuemnto" required="true" requiredMessage="The Docuemnto field is required."/>
+                <p:outputLabel value="Nombre:" for="nombre" />
+                <p:inputText id="nombre" value="#{loginManagedBean.usuario.nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
+            </p:panelGrid>
+            <p:commandButton value="Registrar" actionListener="#{usuarioManagedBean.registrarUsuario()}"/>
+        </h:form>
+
+        <h:form>
+            <h1><h:outputText value="Create/Edit"/></h1>
+            <p:panelGrid columns="2">        
+                <p:outputLabel value="Numero:" for="numero" />
+                <p:inputText id="numero" value="#{telefonoManagedBean.telefono.numero}" title="Numero" required="true" requiredMessage="The Numero field is required."/>
+            </p:panelGrid>
+            <p:commandButton value="Registrar" actionListener="#{telefonoManagedBean.registrarTelefono()}"/>
+        </h:form>
+
+        <h:form>
+            <h1><h:outputText value="Create/Edit"/></h1>
+            <p:panelGrid columns="2">
+                <p:outputLabel value="Email:" for="email" />
+                <p:inputTextarea rows="4" cols="30" id="email" value="#{correoManagedBean.correo.email}" title="Email" required="true" requiredMessage="The Email field is required."/>
+            </p:panelGrid>
+            <p:commandButton value="Registrar" actionListener="#{correoManagedBean.registrarCorreo()}"/>
+        </h:form>
+
+
+    </body>
+</html>

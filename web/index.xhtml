@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Logueate</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:messages autoUpdate="true" showDetail="true"/>
+            <p:growl autoUpdate="true"/>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="documento" value="Documento:"/>
+                <p:inputText id="documento" value="#{usuarioManagedBean.usuario.docuemnto}" required="true" label="username" requiredMessage="The documento field is required."/>
+                <h:outputLabel for="clave" value="Clave:"/>
+                <p:password id="clave" value="#{usuarioManagedBean.usuario.clave}" required="true" label="password" requiredMessage="The Password field is required."/>
+            </h:panelGrid>
+            <p:commandButton value="Iniciar Sesion" action="#{usuarioManagedBean.iniciarSesion()}"/>
+            <p:separator/>
+        </h:form>
+    </h:body>
+</html>
+
